@@ -1,0 +1,29 @@
+body {
+	font-family: monospace;
+	font-size: 14px;
+	background-color: #131214;
+	color: #f7db9e;
+	padding: 10px;
+}
+
+div {
+	margin: 0px;
+	padding: 0px;
+}
+
+a {
+	text-decoration: none;
+	color: #f7efd9;
+}
+
+a:visited {
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.folderName {
+	color: #f7db9e !important;
+}
