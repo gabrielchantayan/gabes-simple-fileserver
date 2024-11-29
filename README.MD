@@ -19,27 +19,26 @@ This program is highly customizable.
 To change the style of the file listing, change the `style` field in the config file.
 
 <details>
-    <summary>By default it comes with the following styles:
-</summary>
-    <img src="images/coffee.png" />
+    <summary>By default it comes with the following styles:</summary>
+    ![coffee](images/coffee.png)
     coffee
 
-    <img src="images/gabe.png" />
+    ![gabe](images/gabe.png)
     gabe (based on my [portfolio website](https://gabrielchantayan.com))
 
-    <img src="images/hacker.png" />
+    ![hacker](images/hacker.png)
     hacker
 
-    <img src="images/lotus.png" />
+    ![lotus](images/lotus.png)
     lotus
 
-    <img src="images/ocean.png" />
+    ![ocean](images/ocean.png)
     ocean
 
-    <img src="images/old.png" />
+    ![old](images/old.png)
     old (based on raw HTML)
 
-    <img src="images/rose.png" />
+    ![rose](images/rose.png)
     rose
 
 </details>
