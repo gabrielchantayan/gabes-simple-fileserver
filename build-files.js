@@ -1,44 +1,53 @@
 import fs from "fs";
 import config from "./config.json" with { type: "json" };
 
-const build_tree = (current_dir, output_files) => {
-	// Build a tree of files
-	// Each folder is a key in the object
-	// Each file is a value in the object
-	const files = fs.readdirSync(current_dir);
+/**
+ * Builds a tree of files and directories.
+ * @param {string} currentDir - The directory path to build the file tree for.
+ * @param {Object<string, string|Object>} outputFiles - An object to store the file tree.
+ * @returns {Object<string, string|Object>} - A tree of files and directories.
+ */
+const build_tree = (currentDir, outputFiles) => {
+	const files = fs.readdirSync(currentDir);
+	const sanitizedOutputFiles = { ...outputFiles };
 
+	// Iterate over each file in the directory
 	for (const file of files) {
-
+		// Check if the file should be ignored
 		if (config.ignored_files.includes(file)) {
 			continue;
 		}
 
+		// Get the path of the file
+		const filePath = `${currentDir}/${file}`;
+		// Get the stat of the file
+		const fileInfo = fs.lstatSync(filePath);
 
-
-		const path = `${current_dir}/${file}`;
-
-		// Check if it's a directory or a file without throwing an error
-		// lstatSync returns info about the file without throwing an error
-		// if it doesn't exist, it returns null
-		const file_info = fs.lstatSync(path);
-		if (file_info?.isDirectory()) {
-			output_files[file] = build_tree(path, {});
+		// If the file is a directory
+		if (fileInfo?.isDirectory()) {
+			// Build the file tree for the directory
+			sanitizedOutputFiles[file] = build_tree(filePath, {});
 		} else {
-			// Sanitize the path for a URL
-			output_files[file] = path.slice(8)
+			// Add the path of the file to the outputFiles object
+			sanitizedOutputFiles[file] = filePath.slice(8);
 		}
 	}
 
-    
-	return output_files;
+	// Return the file tree
+	return sanitizedOutputFiles;
 };
 
+/**
+ * Builds a tree of files and directories.
+ * @param {string} dir - The directory path to build the file tree for.
+ * @returns {Object<string, string|Object>} - A tree of files and directories.
+ */
 const build_files = (dir = '') => {
 
-    // Build a tree of files
+    // Create an object to store the file tree
     const output_files = build_tree(`./files${dir}`, {});
 
-
+    // Return the file tree
     return output_files;
 
 }

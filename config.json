@@ -3,5 +3,6 @@
         "node_modules",
         ".DS_Store"
     ],
-    "style" : "gabe"
+    "style" : "coffee",
+    "version": 1
 }

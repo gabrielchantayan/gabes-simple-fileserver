@@ -11,7 +11,7 @@ export const head = `<!DOCTYPE html>
     <link rel="stylesheet" href="/css/${config.style}.css">
 
     <script>
-        function showHide(e) {
+        const showHide = (e) => {
             var folder = document.getElementById(e);
 
             var icon = document.getElementById(\`icon-\${e}\`);
@@ -24,7 +24,6 @@ export const head = `<!DOCTYPE html>
             }
         }
     </script>
-
 </head>`;
 
 export const header = 
@@ -32,3 +31,7 @@ export const header =
 ▐▌     █  ▐▌   ▐▌   ▐▌   
 ▐▛▀▀▘  █  ▐▌   ▐▛▀▀▘ ▝▀▚▖
 ▐▌   ▗▄█▄▖▐▙▄▄▖▐▙▄▄▖▗▄▄▞▘`
+
+export const footer = `<br /><br />-------<br />
+    Displayed with <a href="https://github.com/gabrielchantayan/gabes-simple-fileserver">Gabe's Simple Fileserver</a> v1
+    <br><br>`;

@@ -1,64 +1,48 @@
-import build_files from "./build-files.js";
 import build_html from "./build-html.js";
 import http from "http";
-import fs from "fs";
+import { readFileSync , statSync} from 'fs';
+
+
+// This is the server that will serve the files
 const server = http.createServer((req, res) => {
+    // Get the URL of the request
+    const url = req.url.replaceAll("%20", " ");
 
-    // Server CSS based on URL
-    // If req.url beings with a css path, serve the css file specified in req.url
-    if (req.url.startsWith("/css/"))  {
+    // If the URL starts with /css/, serve the CSS file
+    if (url.startsWith("/css/")) {
         res.writeHead(200, { "Content-Type": "text/css" });
-        res.end(fs.readFileSync("./" + req.url));
-    }
-
-    else if (req.url === "/") {
+        res.end(readFileSync(`./${url}`));
+    } 
+    // If the URL is /, serve the index.html file
+    else if (url === "/") {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(build_html());
-    }
-
-
+    } 
+    // If the URL is anything else, try to serve the file from the files directory
     else {
+        try {
+            // Get the stats for the file
+            const stats = statSync(`./files${url}`);
 
-            try {
-// Check if req.url is a directory or a file
-            const file_info = fs.lstatSync("./files" + req.url.replaceAll("%20", " "));
-            if (file_info.isDirectory()) {
+            // If the file is a directory, serve the index.html file from that directory
+            if (stats.isDirectory()) {
                 res.writeHead(200, { "Content-Type": "text/html" });
-                try {
-                    res.end(build_html(req.url));
-                } catch (error) {
-                    res.end(build_html());
-                }
-            } else {
-                res.end(fs.readFileSync("./files" + req.url.replaceAll("%20", " ")));
+                res.end(build_html(url));
+            } 
+            // If the file is not a directory, serve the file itself
+            else {
+                res.end(readFileSync(`./files${url}`));
             }
-            }
-            
-            catch (e) {
-                res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.end(build_html());
-            }
-
-
-            // // If the file is a directory, serve the index.html file
-            // res.writeHead(200, { "Content-Type": "text/html" });
-
-            // try {
-            //     res.end(build_html(req.url));
-            // } catch (error) {
-            //     res.end(build_html());
-            // }
-
-            // return;
-        
-
+        } 
+        // If the file does not exist, serve the index.html file
+        catch (e) {
+            res.end(build_html());
+        }
     }
-
-    // // If req.url is anything else, serve the file specified in req.url
-    // res.writeHead(200, { "Content-Type": "text/html" });
-    // res.end(fs.readFileSync("./" + req.url));
 });
 
+// Start the server on port 3000
 server.listen(3000, () => {
-    console.log("Example app listening on port 3000!");
+    console.log("Gabe's Simple Fileserver listening on port 3000!");
 });
+
