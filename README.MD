@@ -1,8 +1,49 @@
 Gabe's Simple Fileserver
 ---
 
-# Why?
+### Why?
 
 When I was switching my website over from a static server to a NextJS server, I realized I could no longer host static files.
 
 This is my way around it. A light-weight framework-less server that can host static files and serve them over HTTP.
+
+### Usage
+
+Run `npm i` to install the server, then run `npm run start` to start the server. Navigate to http://localhost:3000 in your browser to view the files.
+
+
+### Customization
+
+This program is highly customizable.
+
+To change the style of the file listing, change the `style` field in the config file.
+
+<details>
+    <summary>By default it comes with the following styles:
+</summary>
+    <img src="images/coffee.png" />
+    coffee
+
+    <img src="images/gabe.png" />
+    gabe (based on my [portfolio website](https://gabrielchantayan.com))
+
+    <img src="images/hacker.png" />
+    hacker
+
+    <img src="images/lotus.png" />
+    lotus
+
+    <img src="images/ocean.png" />
+    ocean
+
+    <img src="images/old.png" />
+    old (based on raw HTML)
+
+    <img src="images/rose.png" />
+    rose
+
+</details>
+
+To ignore files from showing, add them to the `ignored_files` array in the config file.
+
+To change the header/footer, modify `html-fragments.js`
