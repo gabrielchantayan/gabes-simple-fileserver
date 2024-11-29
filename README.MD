@@ -20,26 +20,28 @@ To change the style of the file listing, change the `style` field in the config 
 
 <details>
     <summary>By default it comes with the following styles:</summary>
-    ![coffee](images/coffee.png)
-    coffee
 
-    ![gabe](images/gabe.png)
-    gabe (based on my [portfolio website](https://gabrielchantayan.com))
 
-    ![hacker](images/hacker.png)
-    hacker
+![coffee](images/coffee.png)
+coffee
 
-    ![lotus](images/lotus.png)
-    lotus
+![gabe](images/gabe.png)
+gabe (based on my [portfolio website](https://gabrielchantayan.com))
 
-    ![ocean](images/ocean.png)
-    ocean
+![hacker](images/hacker.png)
+hacker
 
-    ![old](images/old.png)
-    old (based on raw HTML)
+![lotus](images/lotus.png)
+lotus
 
-    ![rose](images/rose.png)
-    rose
+![ocean](images/ocean.png)
+ocean
+
+![old](images/old.png)
+old (based on raw HTML)
+
+![rose](images/rose.png)
+rose
 
 </details>
 
