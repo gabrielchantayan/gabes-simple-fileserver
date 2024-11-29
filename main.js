@@ -1,13 +1,13 @@
-import express from "express";
 import build_files from "./build-files.js";
 import build_html from "./build-html.js";
-
-const app = express();
-
-app.get("/", (req, res) => {
-    res.send(build_html());
+import http from "http";
+const server = http.createServer((req, res) => {
+    if (req.url === "/") {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.end(build_html());
+    }
 });
 
-app.listen(3000, () => {
+server.listen(3000, () => {
     console.log("Example app listening on port 3000!");
-})
+});
