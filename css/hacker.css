@@ -1,8 +1,8 @@
 body {
 	font-family: monospace;
 	font-size: 14px;
-	background-color: #131214;
-	color: #f7db9e;
+	background-color: #000000;
+	color: #00ff00;
 	padding: 10px;
 }
 
@@ -13,11 +13,11 @@ div, p {
 
 a {
 	text-decoration: none;
-	color: #f7efd9;
+	color: #55ff55;
 }
 
 a:visited {
-	color: white;
+	color: #77ff77;
 }
 
 a:hover, .folderName:hover {
@@ -25,6 +25,5 @@ a:hover, .folderName:hover {
 }
 
 .folderName {
-	color: #f7db9e !important;
+	color: #00ff00 !important;
 }
-
