@@ -1,4 +1,4 @@
-Gabe's Simple Fileserver
+Gabe's Simple Fileserver v2.1
 ---
 
 ### Why?

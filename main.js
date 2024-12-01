@@ -3,8 +3,6 @@ import http from "http";
 import config from "./config.json" with { type: "json" };
 import { readFileSync , statSync} from 'fs';
 
-const css_capture_regex = /(css\/\w+.css)/g;
-
 // This is the server that will serve the files
 const server = http.createServer((req, res) => {
     // Get the URL of the request
@@ -44,7 +42,7 @@ const server = http.createServer((req, res) => {
 });
 
 // Start the server on port 3000
-server.listen(3000, () => {
-    console.log("Gabe's Simple Fileserver listening on port 3000!");
+server.listen(config.port, () => {
+    console.log(`Gabe's Simple Fileserver listening on port ${config.port}!`);
 });
 

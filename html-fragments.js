@@ -33,5 +33,5 @@ export const header =
 ▐▌   ▗▄█▄▖▐▙▄▄▖▐▙▄▄▖▗▄▄▞▘`
 
 export const footer = `<br /><br />-------<br />
-    Displayed with <a href="https://github.com/gabrielchantayan/gabes-simple-fileserver">Gabe's Simple Fileserver</a> v2
+    Displayed with <a href="https://github.com/gabrielchantayan/gabes-simple-fileserver">Gabe's Simple Fileserver</a> v2.1
     <br><br>`;

@@ -1,6 +1,6 @@
 {
 	"name": "gabes-simple-fileserver",
-	"version": "2",
+	"version": "2.1",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {
