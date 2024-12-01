@@ -4,5 +4,7 @@
         ".DS_Store"
     ],
     "style" : "coffee",
-    "version": 1
+    "root_web_dir": "files/",
+    "port": 3003,
+    "version": 2
 }

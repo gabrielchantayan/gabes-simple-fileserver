@@ -1,20 +1,22 @@
 import build_html from "./build-html.js";
 import http from "http";
+import config from "./config.json" with { type: "json" };
 import { readFileSync , statSync} from 'fs';
 
+const css_capture_regex = /(css\/\w+.css)/g;
 
 // This is the server that will serve the files
 const server = http.createServer((req, res) => {
     // Get the URL of the request
-    const url = req.url.replaceAll("%20", " ");
+    const url = req.url.replace(config.root_web_dir, "").replaceAll("%20", " ");
 
     // If the URL starts with /css/, serve the CSS file
-    if (url.startsWith("/css/")) {
+    if (url.startsWith('/css/')) {
         res.writeHead(200, { "Content-Type": "text/css" });
         res.end(readFileSync(`./${url}`));
     } 
     // If the URL is /, serve the index.html file
-    else if (url === "/") {
+    else if (url === '/') {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.end(build_html());
     } 

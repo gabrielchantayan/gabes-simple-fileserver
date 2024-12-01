@@ -9,17 +9,21 @@ This is my way around it. A light-weight framework-less server that can host sta
 
 ### Usage
 
-Run `npm i` to install the server, then run `npm run start` to start the server. Navigate to http://localhost:3000 in your browser to view the files.
+Run `npm i` to install the server, then run `npm run start` to start the server. Navigate to http://localhost:3003 in your browser to view the files.
 
 
 ### Customization
 
 This program is highly customizable.
 
+To change the root directory, change the `root_web_dir` field in the config file. By default it is `files/`. Don't include the leading slash.
+
+To change the port, change the `port` field in the config file. By default it is `3003`.
+
 To change the style of the file listing, change the `style` field in the config file.
 
 <details>
-    <summary>By default it comes with the following styles:</summary>
+    <summary>The program comes with the following styles:</summary>
 
 
 ![coffee](images/coffee.png)
@@ -45,6 +49,6 @@ rose
 
 </details>
 
-To ignore files from showing, add them to the `ignored_files` array in the config file.
+To stop certain files from showing, add them to the `ignored_files` array in the config file.
 
 To change the header/footer, modify `html-fragments.js`

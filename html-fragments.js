@@ -8,7 +8,7 @@ export const head = `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Files</title>
 
-    <link rel="stylesheet" href="/css/${config.style}.css">
+    <link rel="stylesheet" href="/${config.root_web_dir}css/${config.style}.css">
 
     <script>
         const showHide = (e) => {
@@ -33,5 +33,5 @@ export const header =
 ▐▌   ▗▄█▄▖▐▙▄▄▖▐▙▄▄▖▗▄▄▞▘`
 
 export const footer = `<br /><br />-------<br />
-    Displayed with <a href="https://github.com/gabrielchantayan/gabes-simple-fileserver">Gabe's Simple Fileserver</a> v1
+    Displayed with <a href="https://github.com/gabrielchantayan/gabes-simple-fileserver">Gabe's Simple Fileserver</a> v2
     <br><br>`;
