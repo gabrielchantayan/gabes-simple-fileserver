@@ -6,5 +6,5 @@
     "style" : "coffee",
     "root_web_dir": "files/",
     "port": 3003,
-    "version": 2
+    "version": 2.2
 }

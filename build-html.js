@@ -1,5 +1,7 @@
 import * as html_fragments from './html-fragments.js';
 import build_files from './build-files.js';
+// import config from "./config.json" with { type: "json" };
+
 
 /**
  * Grows a tree of HTML for the file list.
